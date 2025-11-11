@@ -1,7 +1,8 @@
-/* src/index.css */
 
 :root {
     --cor-fundo: #f4f7f6;
+    --cor-fundo-sidebar: #ffffff;
+    --cor-fundo-main: #f9fbfd;
     --cor-container: #ffffff;
     --cor-texto: #333;
     --cor-primaria: #007bff;
@@ -12,32 +13,94 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-fundo-main);
     color: var(--cor-texto);
     margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    box-sizing: border-box;
+    padding: 0;
 }
 
-main {
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--cor-fundo-sidebar);
+    border-right: 1px solid var(--cor-borda);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar li button:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
+}
+
+.sidebar li.active button {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    font-weight: 600;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.tool-content {
     background-color: var(--cor-container);
     border-radius: 12px;
     box-shadow: var(--sombra);
     padding: 2.5rem;
-    width: 100%;
-    max-width: 600px;
-    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-h1 {
+.tool-content h1 {
     color: var(--cor-primaria);
     margin-top: 0;
-    text-align: center;
     font-weight: 600;
+}
+
+.tool-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #555;
 }
 
 form {
@@ -62,7 +125,7 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
 }
 
-button {
+button[type="submit"] {
     font-family: inherit;
     font-size: 1.1rem;
     font-weight: 600;
@@ -75,11 +138,11 @@ button {
     transition: background-color 0.2s ease;
 }
 
-button:hover {
+button[type="submit"]:hover {
     background-color: var(--cor-primaria-hover);
 }
 
-button:disabled {
+button[type="submit"]:disabled {
     background-color: #aaa;
     cursor: not-allowed;
 }
@@ -108,6 +171,7 @@ button:disabled {
 .resultado-item span {
     font-size: 1rem;
     color: #555;
+    white-space: pre-wrap;
 }
 
 .erro {
@@ -117,4 +181,57 @@ button:disabled {
     color: #721c24;
     border: 1px solid #f5c6cb;
     border-radius: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-bottom: 1.5rem;
+}
+
+.btn-secondary {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-primaria);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-primaria-hover);
+    color: #fff;
+    border-color: var(--cor-primaria-hover);
+}
+
+.btn-secondary:disabled {
+    background-color: #aaa;
+    color: #fff;
+    border-color: #aaa;
+    cursor: not-allowed;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(0,123,255,0.25);
+}
+
+textarea:focus-visible {
+  outline: none;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
