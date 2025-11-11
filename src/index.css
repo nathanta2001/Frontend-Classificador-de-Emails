@@ -1,11 +1,10 @@
-/* src/index.css (VERSÃO COMPLETA) */
 
-/* 1. Importação da Fonte (Inter) */
+
+/* Importação da Fonte (Inter) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* --- 2. Guia de Estilos: Variáveis de Tema --- */
 :root {
-  /* Tema Claro (do seu mockup) */
+  /* Tema Claro */
   --fundo-principal: #F9FAFB;
   --fundo-container: #FFFFFF;
   --fundo-card: #FFFFFF;
@@ -14,36 +13,36 @@
   --borda-divisor: #E0E0E1;
   --sombra-leve: 0 4px 10px rgba(0, 0, 0, 0.05);
 
-  /* Cores de Destaque (do seu mockup) */
+  /* Cores de Destaque */
   --cor-destaque: #25D366;
-  --cor-destaque-hover: #20b056; /* Um pouco mais escuro */
+  --cor-destaque-hover: #20b056; 
   --cor-destaque-fundo-claro: rgba(37, 211, 102, 0.1);
 
-  /* Cores de Erro (do seu mockup) */
+  /* Cores de Erro */
   --cor-erro: #FF4D4F;
   --cor-erro-fundo: rgba(255, 77, 79, 0.1);
   --cor-erro-borda: #FF4D4F;
 
-  /* Tipografia (do seu mockup) */
+  /* Tipografia */
   --fonte-primaria: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body.dark-mode {
-  /* Tema Escuro (do seu mockup) */
+  /* Tema Escuro  */
   --fundo-principal: #18181B;
-  --fundo-container: #212227; /* Um pouco mais claro que o fundo */
-  --fundo-card: #29292B; /* Um pouco mais claro que o container */
+  --fundo-container: #212227; 
+  --fundo-card: #29292B; 
   --texto-primario: #E4E4E4;
   --texto-secundario: #aaa;
   --borda-divisor: #29292B;
   --sombra-leve: 0 4px 15px rgba(0, 0, 0, 0.2);
 
-  /* Destaque (verde permanece) */
+  /* Destaque */
   --cor-destaque: #25D366;
-  --cor-destaque-hover: #29e071; /* Um pouco mais claro no escuro */
+  --cor-destaque-hover: #29e071; 
   --cor-destaque-fundo-claro: rgba(37, 211, 102, 0.15);
 
-  /* Erro (do seu mockup) */
+  /* Erro  */
   --cor-erro: #FF6F6F;
   --cor-erro-fundo: rgba(255, 111, 111, 0.15);
   --cor-erro-borda: #FF6F6F;
@@ -56,7 +55,7 @@ body {
   color: var(--texto-primario);
   margin: 0;
   padding: 0;
-  font-size: 16px; /* Tamanho base (do seu mockup) */
+  font-size: 16px;
   line-height: 1.6;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -64,21 +63,21 @@ body {
 h1, h2, h3 {
   color: var(--texto-primario);
   margin-top: 0;
-  font-weight: 700; /* Negrito */
+  font-weight: 700; 
 }
-h1 { font-size: 32px; } /* do seu mockup */
-h2 { font-size: 24px; } /* do seu mockup */
-h3 { font-size: 20px; } /* do seu mockup */
+h1 { font-size: 32px; } 
+h2 { font-size: 24px; } 
+h3 { font-size: 20px; } 
 p { color: var(--texto-secundario); }
 
-/* --- 4. Layout Principal --- */
+/* Layout Principal  */
 .app-container {
   display: flex;
   min-height: 100vh;
   position: relative;
 }
 
-/* --- 5. Sidebar (Menu Lateral) --- */
+/* Sidebar (Menu Lateral) */
 .sidebar {
   width: 260px;
   background-color: var(--fundo-container);
@@ -123,7 +122,7 @@ p { color: var(--texto-secundario); }
   padding: 0.75rem 1rem;
   width: 100%;
   text-align: left;
-  border-radius: 8px; /* Bordas arredondadas */
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -135,11 +134,11 @@ p { color: var(--texto-secundario); }
 
 .sidebar li.active button {
   background-color: var(--cor-destaque);
-  color: #fff; /* Texto branco no botão verde */
+  color: #fff; 
   font-weight: 600;
 }
 
-/* --- 6. Conteúdo Principal --- */
+/* Conteúdo Principal */
 .main-content {
   flex-grow: 1;
   padding: 2.5rem;
@@ -153,7 +152,7 @@ p { color: var(--texto-secundario); }
 
 .tool-content {
   background-color: var(--fundo-container);
-  border-radius: 10px; /* Borda arredondada (do seu mockup) */
+  border-radius: 10px; 
   box-shadow: var(--sombra-leve);
   border: 1px solid var(--borda-divisor);
   padding: 2.5rem;
@@ -288,7 +287,7 @@ button[type="submit"]:disabled {
   margin-top: 1.5rem;
   padding: 1.2rem;
   background-color: var(--cor-erro-fundo);
-  color: var(--cor-erro); /* Texto vermelho */
+  color: var(--cor-erro); 
   border: 1px solid var(--cor-erro-borda);
   border-radius: 8px;
   font-weight: 500;
@@ -296,7 +295,7 @@ button[type="submit"]:disabled {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* --- 10. Acessibilidade (Foco e Oculto) --- */
+/*  Acessibilidade */
 *:focus-visible {
   outline: 3px solid var(--cor-destaque);
   outline-offset: 2px;
@@ -307,7 +306,7 @@ textarea:focus-visible { outline: none; }
   overflow: hidden; position: absolute; white-space: nowrap; width: 1px;
 }
 
-/* --- 11. Botão de Tema (Estilo "Pill") --- */
+/* Botão de Tema */
 .theme-toggle {
   position: absolute;
   top: 1.5rem;
@@ -343,8 +342,6 @@ textarea:focus-visible { outline: none; }
 }
 
 
-/* --- 12. Responsividade (Layout Móvel) --- */
-
 /* Botões de controle móvel */
 .mobile-menu-toggle,
 .sidebar-close-btn {
@@ -366,7 +363,7 @@ textarea:focus-visible { outline: none; }
   opacity: 0;
 }
 
-/* Estilos de tela pequena (do seu mockup) */
+/* Estilos de tela pequena */
 @media (max-width: 900px) {
   .app-container {
     flex-direction: column;
@@ -395,7 +392,7 @@ textarea:focus-visible { outline: none; }
     left: 0;
     bottom: 0;
     width: 280px;
-    transform: translateX(-100%); /* Começa escondido */
+    transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
     border-right: 1px solid var(--borda-divisor);
@@ -413,7 +410,7 @@ textarea:focus-visible { outline: none; }
 
   /* Estado Aberto (Móvel) */
   .app-container.sidebar-open .sidebar {
-    transform: translateX(0); /* Mostra o menu */
+    transform: translateX(0); 
   }
   .app-container.sidebar-open .sidebar-overlay {
     display: block;
